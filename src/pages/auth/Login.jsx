@@ -13,10 +13,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        "http://localhost:8000/api/v1/login",
+        {
+          email,
+          password,
+        }
+      );
       console.log(data);
       if (data?.error) {
         toast.error(data.error);
