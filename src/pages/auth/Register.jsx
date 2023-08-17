@@ -2,6 +2,7 @@ import { useState } from "react";
 import Jumbotron from "../../components/cards/Jumbotron";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useAuth } from "../../context/auth";
 
 
 const Register = () => {
@@ -11,21 +12,25 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
 
+  const [auth, setAuth] = useAuth();
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8000/api/v1/register", {
+      const {data} = await axios.post("http://localhost:8000/api/v1/register", {
         name,
         email,
         password,
       });
       console.log(data);
 
-      if (data?.error) {
+      if (data.error) {
         toast.error(data.error);
       } else {
-        localStorage.setItem("auth", JSON.stringify(data));      
+        localStorage.setItem("auth", JSON.stringify(data)); 
+          setAuth({ ...auth, token: data.token, user: data.user });
         toast.success("Registration successful");
        
       }

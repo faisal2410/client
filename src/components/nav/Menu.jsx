@@ -5,7 +5,7 @@ const Menu = () => {
     <>
       <ul className="nav d-flex justify-content-between shadow-sm mb-2 sticky-top bg-light">
         <li className="nav-item">
-          <NavLink className="nav-link" aria-current="page" to="/">
+          <NavLink className="nav-link"  to="/">
             HOME
           </NavLink>
         </li>
