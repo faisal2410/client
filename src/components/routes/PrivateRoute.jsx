@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../../context/auth.jsx";
 import Loading from "./Loading.jsx";
-import axios from "axios";
+
 const PrivateRoute = () => {
   // context
   const [auth, setAuth] = useAuth();
