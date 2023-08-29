@@ -22,7 +22,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.post("http://localhost:8000/api/v1/register", {
+      const {data} = await axios.post("/register", {
         name,
         email,
         password,

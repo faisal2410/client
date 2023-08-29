@@ -25,6 +25,11 @@ const Menu = () => {
             HOME
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="dashboard/secret">
+            Secret
+          </NavLink>
+        </li>
         {!auth?.user ? (
           <>
             <li className="nav-item">

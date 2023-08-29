@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import LoadingGIF from "../../images/loading.gif";
 
-const Loading = () => {
+const Loading = ({ path = "login" }) => {
   // state
   const [count, setCount] = useState(3);
   // hooks
   const navigate = useNavigate();
+  const location = useLocation();
  
 
   useEffect(() => {
@@ -16,7 +17,9 @@ const Loading = () => {
     }, 1000);
     // redirect once count is equal to 0
     count === 0 &&
-      navigate("/login");
+    navigate(`/${path}`, {
+      state: location.pathname,
+    });
     // cleanup
     return () => clearInterval(interval);
   }, [count]);

@@ -1,6 +1,7 @@
+
 /* eslint-disable react/prop-types */
 import { useState, createContext, useContext, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const AuthContext = createContext();
 
@@ -10,8 +11,13 @@ const AuthProvider = ({ children }) => {
         token: "",
     });
 
-    
 
+
+    // axios config
+    axios.defaults.baseURL = import.meta.env.VITE_API;
+    axios.defaults.headers.common["Authorization"] = auth?.token;
+
+  
     useEffect(() => {
         const data = localStorage.getItem("auth");
         if (data) {
@@ -20,7 +26,7 @@ const AuthProvider = ({ children }) => {
 
         }
     }, []);
-    
+
 
     return (
         <AuthContext.Provider value={[auth, setAuth]}>
