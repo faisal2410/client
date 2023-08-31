@@ -9,6 +9,7 @@ const Loading = ({ path = "login" }) => {
   // hooks
   const navigate = useNavigate();
   const location = useLocation();
+  console.log("=======>",location);
  
 
   useEffect(() => {

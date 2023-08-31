@@ -15,6 +15,8 @@ const Login = () => {
 
    const navigate = useNavigate();
    const location = useLocation();
+   console.log(location)
+
 
 
   const handleSubmit = async (e) => {
@@ -24,6 +26,7 @@ const Login = () => {
           email,
           password,
         }
+     
       );
       console.log(data);
       if (data?.error) {
@@ -32,7 +35,9 @@ const Login = () => {
         localStorage.setItem("auth", JSON.stringify(data));   
           setAuth({ ...auth, token: data.token, user: data.user });
         toast.success("Login successful");
-        navigate(location.state||"/dashboard");
+        navigate(location.state||
+          `/dashboard/${data?.user?.role === 1 ? "admin" : "user"}`
+          );
      
       }
     } catch (err) {

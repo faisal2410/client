@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [auth, setAuth] = useAuth();
     return (
         <>
-        <Jumbotron title={`Hello ${ auth?.user?.name }`} subTitle="Dashboard" />
+        <Jumbotron title={`Hello ${ auth?.user?.name }`} subTitle=" User Dashboard" />
         </>
   )
 };

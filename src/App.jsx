@@ -6,7 +6,8 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Dashboard from "./pages/user/Dashboard.jsx";
 import PrivateRoute from "./components/routes/PrivateRoute.jsx";
-import Secret from "./pages/Secret.jsx";
+import AdminDashboard from "./pages/admin/Dashboard";
+
 
 
 
@@ -29,8 +30,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
 
-          <Route path="" element={<Dashboard />} />
-          <Route path="secret" element={<Secret/>}/>
+          <Route path="user" element={<Dashboard />} />
+          <Route path="admin" element={<AdminDashboard />} />
+         
           
 
         </Route>
