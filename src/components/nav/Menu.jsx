@@ -54,7 +54,7 @@ const Menu = () => {
                   <NavLink
                     className="nav-link"
                     to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
-                      }`}
+                      }`}    
                   >
                     Dashboard
                   </NavLink>

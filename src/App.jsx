@@ -7,6 +7,7 @@ import Register from "./pages/auth/Register.jsx";
 import Dashboard from "./pages/user/Dashboard.jsx";
 import PrivateRoute from "./components/routes/PrivateRoute.jsx";
 import AdminDashboard from "./pages/admin/Dashboard";
+import AdminCategory from "./pages/admin/Category.jsx";
 
 
 
@@ -32,6 +33,7 @@ const App = () => {
 
           <Route path="user" element={<Dashboard />} />
           <Route path="admin" element={<AdminDashboard />} />
+          <Route path="admin/category" element={<AdminCategory />} />
          
           
 
