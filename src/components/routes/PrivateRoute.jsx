@@ -6,7 +6,7 @@ import Loading from "./Loading.jsx";
 
 const PrivateRoute = () => {
   // context
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   // state
   const [ok, setOk] = useState(false);
 
