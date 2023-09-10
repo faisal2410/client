@@ -14,8 +14,8 @@ const AdminProduct = () => {
   // context
   const [auth] = useAuth();
 
-  // state
-  
+  // state 
+
   const [categories, setCategories] = useState([]);
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");

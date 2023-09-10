@@ -31,17 +31,16 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        
+
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />     
         </Route>
 
     <Route path="/dashboard" element={<AdminRoute/>}>
 
-    <Route path="admin" element={<AdminDashboard />} />
+          <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/category" element={<AdminCategory />} />
           <Route path="admin/product" element={<AdminProduct />} />   
-
 
     </Route>
 
