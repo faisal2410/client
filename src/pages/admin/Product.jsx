@@ -68,6 +68,7 @@ const AdminProduct = () => {
 
 
 
+
   return (
     <>
       <Jumbotron
@@ -137,6 +138,7 @@ const AdminProduct = () => {
               size="large"
               className="form-select mb-3"
               placeholder="Choose category"
+           
               onChange={(value) => setCategory(value)}
             >
               {categories?.map((c) => (
