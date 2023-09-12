@@ -49,7 +49,7 @@ const AdminProducts=()=> {
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
-                        src={`http://localhost:8000/api/v1/product/photo/${p._id}`}
+                        src={`${import.meta.env.VITE_API}/product/photo/${p._id}`}
                         alt={p.name}
                         className="img img-fluid rounded-start"
                       />

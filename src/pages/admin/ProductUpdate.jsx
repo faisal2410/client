@@ -127,8 +127,7 @@ const AdminProductUpdate=()=> {
             ) : (
               <div className="text-center">
                 <img
-                  src={`http://localhost:8000/api/v1/product/photo/${id}`}
-                    // }/product/photo/${id}?${new Date().getTime()}`}
+                  src={`${import.meta.env.VITE_API}/product/photo/${id}`}                   
                   alt="product"
                   className="img img-responsive"
                   height="200px"
