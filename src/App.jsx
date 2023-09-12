@@ -10,6 +10,8 @@ import AdminRoute from "./components/routes/AdminRoute.jsx";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminCategory from "./pages/admin/Category.jsx";
 import AdminProduct from "./pages/admin/Product.jsx";
+import AdminProducts from "./pages/admin/Products";
+import AdminProductUpdate from "./pages/admin/ProductUpdate";
 
 
 
@@ -40,7 +42,12 @@ const App = () => {
 
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/category" element={<AdminCategory />} />
-          <Route path="admin/product" element={<AdminProduct />} />   
+          <Route path="admin/product" element={<AdminProduct />} /> 
+          <Route path="admin/products" element={<AdminProducts />} /> 
+          <Route
+            path="admin/product/update/:slug"
+            element={<AdminProductUpdate />}
+          /> 
 
     </Route>
 
