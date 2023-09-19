@@ -30,3 +30,6 @@ export const prices = [
       array: [80, 999],
     },
   ];
+
+
+  
