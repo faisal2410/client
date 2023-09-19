@@ -12,6 +12,7 @@ import AdminCategory from "./pages/admin/Category.jsx";
 import AdminProduct from "./pages/admin/Product.jsx";
 import AdminProducts from "./pages/admin/Products";
 import AdminProductUpdate from "./pages/admin/ProductUpdate";
+import Shop from "./pages/Shop";
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 

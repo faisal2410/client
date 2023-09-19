@@ -1,16 +1,37 @@
 /* eslint-disable react/prop-types */
-
+import { Badge } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/cart.jsx";
+import toast from "react-hot-toast";
 
 
 const  ProductCard=({ p })=> {
+
+   // context
+   const [cart, setCart] = useCart();
 
   // hooks
   const navigate = useNavigate();
 
   return (
     <div className="card mb-3 hoverable">
-   
+      <Badge.Ribbon text={`${p?.sold} sold`} color="red">
+        <Badge.Ribbon
+          text={`${p?.quantity >= 1
+              ? `${p?.quantity - p?.sold} in stock`
+              : "Out of stock"
+            }`}
+          placement="start"
+          color="green"
+        >
+          <img
+            className="card-img-top"
+            src={`${import.meta.env.VITE_API}/product/photo/${p._id}`}
+            alt={p.name}
+            style={{ height: "300px", objectFit: "cover" }}
+          />
+        </Badge.Ribbon>
+      </Badge.Ribbon>
 
       <div className="card-body">
         <h5>{p?.name}</h5>
@@ -34,10 +55,18 @@ const  ProductCard=({ p })=> {
           View Product
         </button>
 
-      
-      </div>
-
-    
+        <button
+          className="btn btn-outline-primary col card-button"
+          style={{ borderBottomRightRadius: "5px" }}
+          onClick={() => {
+            setCart([...cart, p]);
+            localStorage.setItem("cart", JSON.stringify([...cart, p]));
+            toast.success("Added to cart");
+          }}
+        >
+          Add to Cart
+        </button>
+      </div>     
     </div>
   );
 }
