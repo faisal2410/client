@@ -13,6 +13,7 @@ import AdminProduct from "./pages/admin/Product.jsx";
 import AdminProducts from "./pages/admin/Products";
 import AdminProductUpdate from "./pages/admin/ProductUpdate";
 import Shop from "./pages/Shop";
+import Search from "./pages/Search";
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/search" element={<Search />} />
 
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />     

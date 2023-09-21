@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth.jsx";
 import { useNavigate } from "react-router-dom";
+import Search from "../forms/Search.jsx";
 
 const Menu = () => {
 
@@ -30,6 +31,7 @@ const Menu = () => {
             SHOP
           </NavLink>
         </li>
+        <Search />
        
         {!auth?.user ? (
           <>
